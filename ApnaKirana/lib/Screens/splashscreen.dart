@@ -1,4 +1,4 @@
-import 'package:ApnaKirana/Screens/homescreen.dart';
+import 'package:ApnaKirana/Screens/introscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -16,7 +16,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
       seconds: 5,
       image: Image.asset('assets/icons/icon1.png'),
       photoSize: 80,
-      navigateAfterSeconds: HomeScreen(),
+      navigateAfterSeconds: IntroScreen(),
     );
   }
 }
