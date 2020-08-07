@@ -1,4 +1,5 @@
 import 'package:ApnaKirana/Screens/homescreen.dart';
+import 'package:ApnaKirana/Screens/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -31,7 +32,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => HomeScreen()),
+      MaterialPageRoute(builder: (_) => MyLoginScreen()),
     );
   }
 
