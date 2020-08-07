@@ -1,4 +1,4 @@
-import 'package:ApnaKirana/Screens/homescreen.dart';
+import 'package:ApnaKirana/Screens/customeraccountsscreen.dart';
 import 'package:flutter/material.dart';
 
 class MyLoginScreen extends StatefulWidget {
@@ -74,7 +74,7 @@ class CodeForThis extends StatelessWidget {
               color: Colors.blue,
               onPressed: () {
                 print('SendOtp');
-                HomeScreen();
+                CustomerAccountsScreen();
               },
               child: Text(
                 '          SEND OTP          ',
