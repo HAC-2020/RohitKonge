@@ -67,7 +67,7 @@ class CodeForThis extends StatelessWidget {
               height: 70,
             ),
             FlatButton(
-              padding: EdgeInsets.symmetric(horizontal: 84, vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 74, vertical: 15),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(100),
               ),
@@ -79,6 +79,7 @@ class CodeForThis extends StatelessWidget {
               child: Text(
                 '          SEND OTP          ',
                 style: TextStyle(
+                  fontSize: 20,
                   fontWeight: FontWeight.w800,
                   color: Colors.white,
                 ),
@@ -88,18 +89,33 @@ class CodeForThis extends StatelessWidget {
               height: 20,
             ),
             FlatButton(
-              padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(100),
               ),
               color: Colors.blue,
               onPressed: () => {},
-              child: Text(
-                'SIGN IN WITH GOOGLE',
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white,
-                ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Image.asset(
+                    'assets/icons/googleicon.png',
+                    width: 20,
+                    height: 20,
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                    child: Text(
+                      'SIGN IN WITH GOOGLE',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
