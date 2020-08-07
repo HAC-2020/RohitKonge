@@ -8,8 +8,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('ApnaKirana'),
-        elevation: 0,
-        backgroundColor: Colors.purple[200],
+        elevation: 10,
+        backgroundColor: Colors.blue[200],
       ),
       body: CodeForThis(),
       drawer: DrawerForThis(),
