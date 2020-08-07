@@ -1,4 +1,4 @@
-import 'package:ApnaKirana/homescreen.dart';
+import 'package:ApnaKirana/Screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ApnaKirana',
-      home: HomeScreen(),
+      home: MySplashScreen(),
     );
   }
 }
