@@ -1,3 +1,4 @@
+import 'package:ApnaKirana/EmployeeScreen/addstaff.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
@@ -153,7 +154,12 @@ class _CodeForThisState extends State<CodeForThis> {
                   color: Colors.purple,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AddStaffScreen()),
+                    );
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
