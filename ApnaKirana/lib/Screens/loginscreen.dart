@@ -15,6 +15,7 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: CodeForThis(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
