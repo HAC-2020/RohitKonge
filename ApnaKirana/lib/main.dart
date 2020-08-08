@@ -1,5 +1,6 @@
 import 'package:ApnaKirana/CustomerAccountsScreen/customeraccountsscreen.dart';
 import 'package:ApnaKirana/EmployeeScreen/employeesalaryscreen.dart';
+import 'package:ApnaKirana/Screens/introscreen.dart';
 import 'package:ApnaKirana/Screens/loginscreen.dart';
 import 'package:ApnaKirana/Screens/splashscreen.dart';
 import 'package:ApnaKirana/EmployeeScreen/employeesalaryscreen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ApnaKirana',
-      home: MyEmployeeSalaryScreen(),
+      home: IntroScreen(),
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
     );

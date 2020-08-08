@@ -36,13 +36,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget _buildImage(String assetName) {
-    assetName = 'icons/icon1.png';
-    return Align(
-      child: Image.asset('assets/$assetName', width: 200.0),
-      alignment: Alignment.bottomCenter,
-    );
-  }
+  // Widget _buildImage(String assetName) {
+  //   //assetName = 'icons/icon1.png';
+  //   return Align(
+  //     child: Image.asset('assets/$assetName', width: 150.0),
+  //     alignment: Alignment.bottomCenter,
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -59,42 +59,31 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       key: introKey,
       pages: [
         PageViewModel(
-          title: "Fractional shares",
+          title: "Online Order's",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('img1'),
+              "Take orders via Whatsapp to reduce Customer's time as well as contact with them",
+          image: Align(
+            child: Image.asset('assets/images/whatsappimage.png', width: 200.0),
+            alignment: Alignment.bottomCenter,
+          ),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
-          body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
-          image: _buildImage('img2'),
+          title: "Customer Accounts",
+          body: "Easily track the due's of your customers",
+          image: Align(
+            child: Image.asset('assets/images/customermoneyimage.png',
+                width: 150.0),
+            alignment: Alignment.bottomCenter,
+          ),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
-          body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          image: _buildImage('img3'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
-          image: _buildImage('img2'),
-          footer: RaisedButton(
-            onPressed: () {
-              introKey.currentState?.animateScroll(0);
-            },
-            child: const Text(
-              'FooButton',
-              style: TextStyle(color: Colors.white),
-            ),
-            color: Colors.lightBlue,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
+          title: "Staff's Information",
+          body: "Help's you with your staff's salary and attendance",
+          image: Align(
+            child: Image.asset('assets/images/staffimage.png', width: 150.0),
+            alignment: Alignment.bottomCenter,
           ),
           decoration: pageDecoration,
         ),
