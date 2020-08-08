@@ -1,4 +1,4 @@
-import 'package:ApnaKirana/Screens/customeraccountsscreen.dart';
+import 'package:ApnaKirana/CustomerAccountsScreen/customeraccountsscreen.dart';
 import 'package:ApnaKirana/Screens/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
