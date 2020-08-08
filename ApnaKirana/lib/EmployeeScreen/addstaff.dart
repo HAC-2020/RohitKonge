@@ -10,10 +10,14 @@ class AddStaffScreen extends StatefulWidget {
 class _AddStaffScreenState extends State<AddStaffScreen> {
   final _nameInput = TextEditingController();
   final _numberInput = TextEditingController();
+  final _howmuchpaidinput = TextEditingController();
+  final _howmuchtopayinput = TextEditingController();
 
   Color c1 = Colors.green[200];
   Color c2 = Colors.grey[200];
+  String textToUse = 'Date of Staffs Salary Payment';
   Color temp;
+  String daysToUse = '';
 
   @override
   Widget build(BuildContext context) {
@@ -110,6 +114,8 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
                           temp = c1;
                           c1 = c2;
                           c2 = temp;
+                          textToUse = 'Date of Staffs Salary Payment';
+                          daysToUse = '';
                         });
                         print('asdf');
                       },
@@ -157,6 +163,9 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
                           temp = c1;
                           c1 = c2;
                           c2 = temp;
+                          textToUse = 'When does the week start?';
+                          daysToUse =
+                              'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday';
                         });
                         print('asdf');
                       },
@@ -227,7 +236,96 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
                     SizedBox(
                       height: 20,
                     ),
+                    Container(
+                      child: TextField(
+                        keyboardType: TextInputType.text,
+                        controller: _nameInput,
+                        decoration: InputDecoration(
+                          hintText: textToUse,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blueAccent),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        daysToUse,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Opening Balance',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextField(
+                      keyboardType: TextInputType.number,
+                      controller: _howmuchpaidinput,
+                      decoration: InputDecoration(
+                        hintText: 'How much you paid?',
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blueAccent),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        controller: _howmuchtopayinput,
+                        decoration: InputDecoration(
+                          hintText: 'How much you have to pay?',
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blueAccent),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  onPressed: () {},
+                  elevation: 0,
+                  child: Text('ADD'),
                 ),
               ),
             ],
