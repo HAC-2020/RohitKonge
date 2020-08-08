@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "926293191569",
+    "firebase_url": "https://apna-kirana-ff50c.firebaseio.com",
+    "project_id": "apna-kirana-ff50c",
+    "storage_bucket": "apna-kirana-ff50c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926293191569:android:376960370b9b5fd7164830",
+        "android_client_info": {
+          "package_name": "com.rohitkonge.ApnaKirana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926293191569-3haombjdmb3gh8tlktk18elkmj08q3u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rohitkonge.ApnaKirana",
+            "certificate_hash": "d5e7b5be127a7b403bfebc5b6b1d8732014c33d3"
+          }
+        },
+        {
+          "client_id": "926293191569-ldvtubokte00eqpag7g0cbe68g66fit8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0syJPEFPo0hk1k9pS5qjxYG4phVWHUhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926293191569-ldvtubokte00eqpag7g0cbe68g66fit8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

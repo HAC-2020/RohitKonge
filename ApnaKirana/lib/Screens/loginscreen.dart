@@ -1,5 +1,7 @@
 import 'package:ApnaKirana/Screens/customeraccountsscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class MyLoginScreen extends StatefulWidget {
   MyLoginScreen({Key key}) : super(key: key);
@@ -18,7 +20,24 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
 }
 
 class CodeForThis extends StatelessWidget {
-  const CodeForThis({Key key}) : super(key: key);
+  //const CodeForThis({Key key}) : super(key: key);
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = new GoogleSignIn();
+
+  Future<FirebaseUser> _signIn() async {
+    GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+    GoogleSignInAuthentication gSA = await googleSignInAccount.authentication;
+
+    FirebaseUser user = (await _auth.signInWithCredential(
+      GoogleAuthProvider.getCredential(
+        idToken: gSA.idToken,
+        accessToken: gSA.accessToken,
+      ),
+    ))
+        .user;
+    return user;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +113,11 @@ class CodeForThis extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100),
               ),
               color: Colors.blue,
-              onPressed: () => {},
+              onPressed: () => {
+                _signIn().catchError((e) {
+                  print(e);
+                })
+              },
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
