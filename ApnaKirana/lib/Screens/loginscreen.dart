@@ -22,6 +22,9 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
 class CodeForThis extends StatelessWidget {
   //const CodeForThis({Key key}) : super(key: key);
 
+  final _phoneController = TextEditingController();
+  final _codeController = TextEditingController();
+
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = new GoogleSignIn();
 
@@ -36,8 +39,31 @@ class CodeForThis extends StatelessWidget {
       ),
     ))
         .user;
+
+    // user.displayname() => gives the name of user
     return user;
   }
+
+  // Future<FirebaseUser> _otpSignIn(String phone) async {
+  //   _auth.verifyPhoneNumber(
+  //       phoneNumber: phone,
+  //       timeout: Duration(seconds: 120),
+  //       verificationCompleted: (AuthCredential credential) async {
+  //         AuthResult result = await _auth.signInWithCredential(credential);
+  //         FirebaseUser phoneUser = result.user;
+
+  //       },
+  //       verificationFailed: (AuthException exception) {
+  //         print(exception);
+  //       },
+  //       // codeSent: (String verification, [int forceResendingToken]) {
+  //       //   showDialog(
+  //       //       context: ,
+  //       //       barrierDismissible: false,
+  //       //       builder: (context) {});
+  //       // },
+  //       codeAutoRetrievalTimeout: null);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -74,16 +100,44 @@ class CodeForThis extends StatelessWidget {
               width: 300,
               child: Column(
                 children: <Widget>[
-                  TextField(),
+                  TextField(
+                    keyboardType: TextInputType.number,
+                    controller: _phoneController,
+                    decoration: InputDecoration(
+                      hintText: 'Phone Number',
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.greenAccent),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
                   SizedBox(
                     height: 40,
                   ),
-                  TextField(),
+                  TextField(
+                    keyboardType: TextInputType.number,
+                    controller: _codeController,
+                    decoration: InputDecoration(
+                      hintText: 'OTP',
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.greenAccent),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
             SizedBox(
-              height: 70,
+              height: 50,
             ),
             FlatButton(
               padding: EdgeInsets.symmetric(horizontal: 74, vertical: 15),
@@ -92,8 +146,10 @@ class CodeForThis extends StatelessWidget {
               ),
               color: Colors.blue,
               onPressed: () {
+                //add code for proper number
+                // _otpSignIn(_phoneController.text.trim());
                 print('SendOtp');
-                CustomerAccountsScreen();
+                //CustomerAccountsScreen();
               },
               child: Text(
                 '          SEND OTP          ',
@@ -104,8 +160,37 @@ class CodeForThis extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 18),
+                      child: Container(
+                        height: 2,
+                        width: 10,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'OR',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 18),
+                      child: Container(
+                        height: 2,
+                        width: 10,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             FlatButton(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
