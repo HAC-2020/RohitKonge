@@ -6,6 +6,7 @@ import 'package:ApnaKirana/Screens/introscreen.dart';
 import 'package:ApnaKirana/Screens/loginscreen.dart';
 import 'package:ApnaKirana/Screens/splashscreen.dart';
 import 'package:ApnaKirana/EmployeeScreen/employeesalaryscreen.dart';
+import 'package:ApnaKirana/route_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ApnaKirana',
-      home: MyBillingScreen(),
+      //home: MyBillingScreen(),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
     );

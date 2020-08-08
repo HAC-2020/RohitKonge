@@ -13,9 +13,9 @@ class MyLoginScreen extends StatefulWidget {
 class _MyLoginScreenState extends State<MyLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: CodeForThis(),
-      debugShowCheckedModeBanner: false,
+    return Scaffold(
+      body: CodeForThis(),
+      //debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -29,7 +29,7 @@ class CodeForThis extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = new GoogleSignIn();
 
-  Future<FirebaseUser> _signIn() async {
+  Future<FirebaseUser> _signIn(BuildContext ctx) async {
     GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
     GoogleSignInAuthentication gSA = await googleSignInAccount.authentication;
 
@@ -40,7 +40,8 @@ class CodeForThis extends StatelessWidget {
       ),
     ))
         .user;
-
+    print(user.displayName);
+    Navigator.of(ctx).pushNamed('/newroute');
     // user.displayname() => gives the name of user
     return user;
   }
@@ -200,7 +201,7 @@ class CodeForThis extends StatelessWidget {
               ),
               color: Colors.blue,
               onPressed: () => {
-                _signIn().catchError((e) {
+                _signIn(context).catchError((e) {
                   print(e);
                 })
               },
